@@ -16,13 +16,19 @@ export const NODES: TreeNode[] = [
             name: 'document 2',
           },
         ],
-
         showChildren: false,
-
         children: [
           {
             name: 'Algeris',
             showChildren: false,
+            documents: [
+              {
+                name: 'document 1',
+              },
+              {
+                name: 'document 2',
+              },
+            ],
             children: [],
           },
           {
