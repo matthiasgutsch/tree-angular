@@ -8,7 +8,6 @@ export const NODES: TreeNode[] = [
     children: [
       {
         name: 'Algeria',
-        showChildren: false,
         documents: [
           {
             name: 'document 1',
@@ -17,6 +16,9 @@ export const NODES: TreeNode[] = [
             name: 'document 2',
           },
         ],
+
+        showChildren: false,
+
         children: [
           {
             name: 'Algeris',
