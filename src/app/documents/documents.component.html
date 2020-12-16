@@ -1,0 +1,7 @@
+<ul *ngIf="documentsData">
+  <li *ngFor="let node of documentsData">
+    <span *ngIf="node.children != 0"><b>+</b></span>
+    <span (click)="toggleChild(node)"> {{ node.name }} </span>
+    <app-tree *ngIf="node.showChildren" [treeData]="node.children"></app-tree>
+  </li>
+</ul>

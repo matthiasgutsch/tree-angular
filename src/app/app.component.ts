@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NODES } from './tree/mock-nodes';
+import { NODES } from './services/mock-nodes';
 
 @Component({
   selector: 'app-root',

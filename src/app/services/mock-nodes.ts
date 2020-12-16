@@ -1,83 +1,94 @@
-import { TreeNode } from "./tree-node";
+import { TreeNode } from './tree-node';
 
 export const NODES: TreeNode[] = [
   {
-    name: "Africa",
+    name: 'Africa',
     showChildren: false,
+    documents: [],
     children: [
       {
-        name: "Algeria",
+        name: 'Algeria',
         showChildren: false,
+        documents: [
+          {
+            name: 'document 1',
+          },
+          {
+            name: 'document 2',
+          },
+        ],
         children: [
           {
-            name: "Algeris",
+            name: 'Algeris',
             showChildren: false,
             children: [],
           },
           {
-            name: "Algeria child 2",
+            name: 'Algeria child 2',
             showChildren: false,
             children: [],
           },
         ],
       },
       {
-        name: "Angola",
+        name: 'Angola',
         showChildren: false,
         children: [],
       },
       {
-        name: "Benin",
+        name: 'Benin',
         showChildren: false,
         children: [],
       },
     ],
   },
   {
-    name: "Asia",
+    name: 'Asia',
     showChildren: false,
+    documents: [],
     children: [
       {
-        name: "Afghanistan",
+        name: 'Afghanistan',
         showChildren: false,
         children: [
           {
-            name: "Kabul",
+            name: 'Kabul',
             showChildren: false,
             children: [],
           },
         ],
       },
       {
-        name: "Armenia",
+        name: 'Armenia',
         showChildren: false,
         children: [],
       },
       {
-        name: "Azerbaijan",
+        name: 'Azerbaijan',
         showChildren: false,
         children: [],
       },
     ],
   },
   {
-    name: "Europe",
+    name: 'Europe',
     showChildren: false,
+    documents: [],
     children: [
       {
-        name: "Romania",
+        name: 'Romania',
         showChildren: false,
         children: [
           {
-            name: "Bucuresti",
+            name: 'Bucuresti',
             showChildren: false,
             children: [
               {
-                name: "Romania",
+                name: 'Romania',
                 showChildren: false,
                 children: [
                   {
-                    name: "Bucuresti",
+                    name: 'Bucuresti',
                     showChildren: false,
                     children: [],
                   },
@@ -88,20 +99,22 @@ export const NODES: TreeNode[] = [
         ],
       },
       {
-        name: "Hungary",
+        name: 'Hungary',
         showChildren: false,
         children: [],
       },
       {
-        name: "Benin",
+        name: 'Benin',
         showChildren: false,
         children: [],
       },
     ],
   },
   {
-    name: "North America",
+    name: 'North America',
     showChildren: false,
+    documents: [],
+
     children: [],
   },
 ];

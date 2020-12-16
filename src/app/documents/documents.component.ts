@@ -3,12 +3,11 @@ import { Input } from '@angular/core';
 import { TreeNode } from '../services/tree-node';
 
 @Component({
-  selector: 'app-tree',
-  templateUrl: './tree.component.html',
-  styleUrls: ['./tree.component.css'],
+  selector: 'app-documents',
+  templateUrl: './documents.component.html',
+  styleUrls: ['./documents.component.css'],
 })
-export class TreeComponent implements OnInit {
-  @Input() treeData: TreeNode[];
+export class DocumentsComponent implements OnInit {
   @Input() documentsData: TreeNode[];
 
   ngOnInit() {}
