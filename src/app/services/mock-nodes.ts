@@ -4,29 +4,47 @@ export const NODES: TreeNode[] = [
   {
     name: 'Africa',
     showChildren: false,
-    documents: [],
+    firstName: 'Africa',
+    documents: [
+      {
+        name: 'document 1',
+        data: '12/12/2005',
+      },
+      {
+        name: 'document 2',
+        data: '12/12/2005',
+      },
+    ],
     children: [
       {
         name: 'Algeria',
+        firstName: 'Algeria',
+
         documents: [
           {
             name: 'document 1',
+            data: '12/12/2005',
           },
           {
             name: 'document 2',
+            data: '12/12/2005',
           },
         ],
         showChildren: false,
         children: [
           {
             name: 'Algeris',
+            firstName: 'Algeris',
+
             showChildren: false,
             documents: [
               {
                 name: 'document 1.jpg',
+                data: '12/12/2005',
               },
               {
                 name: 'document 2.jpg',
+                data: '12/12/2005',
               },
             ],
             children: [],
@@ -53,6 +71,8 @@ export const NODES: TreeNode[] = [
   {
     name: 'Asia',
     showChildren: false,
+    firstName: 'Asia',
+
     documents: [],
     children: [
       {
@@ -81,6 +101,7 @@ export const NODES: TreeNode[] = [
   {
     name: 'Europe',
     showChildren: false,
+    firstName: 'Europe',
     documents: [],
     children: [
       {
@@ -117,12 +138,5 @@ export const NODES: TreeNode[] = [
         children: [],
       },
     ],
-  },
-  {
-    name: 'North America',
-    showChildren: false,
-    documents: [],
-
-    children: [],
   },
 ];

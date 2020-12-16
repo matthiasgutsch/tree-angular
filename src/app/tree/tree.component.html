@@ -1,12 +1,19 @@
 <ul *ngIf="treeData">
   <li *ngFor="let node of treeData">
-    <span *ngIf="node.children != 0" (click)="toggleChild(node)"><b>+</b></span>
-    <span (click)="onoutpurtreeData(node)"> {{ node.name }} </span>
-    <app-tree *ngIf="node.showChildren" [treeData]="node.children"></app-tree>
+    <div
+      class="arrow"
+      *ngIf="node.children.length != 0"
+      (click)="toggleNode(node)"
+    >
+      <i class="fa fa-caret-right" *ngIf="!node.showChildren"></i>
+      <i class="fa fa-caret-down" *ngIf="node.showChildren"></i>
+    </div>
+    <span (click)="onNodeSelect(node)"> {{ node.name }} </span>
+    <ng-container *ngIf="node.showChildren">
+      <app-tree
+        [treeData]="node.children"
+        (nodeSelect)="onNodeSelect($event)"
+      ></app-tree>
+    </ng-container>
   </li>
 </ul>
-<!-- <app-tree
-  *ngIf="node.showChildren || node.documents != 0"
-  [treeData]="node.documents"
-></app-tree>
--->

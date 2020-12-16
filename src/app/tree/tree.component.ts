@@ -1,5 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Input } from '@angular/core';
+import { Component, EventEmitter, OnInit, Input, Output } from '@angular/core';
 import { TreeNode } from '../services/tree-node';
 
 @Component({
@@ -11,15 +10,20 @@ export class TreeComponent implements OnInit {
   @Input() treeData: TreeNode[];
   @Input() documentsData: TreeNode[];
 
-  @Output() outpurtreeData: EventEmitter<TreeNode[]> = new EventEmitter();
+  @Output() nodeSelect = new EventEmitter<TreeNode>();
 
   ngOnInit() {}
 
-  toggleChild(node) {
+  toggleNode(node: TreeNode) {
+    // apro o chiudo il nodo
     node.showChildren = !node.showChildren;
+    // se il nodo e' stato aperto, lo "seleziono" per mostrarne i documenti
+    if (node.showChildren === true) {
+      this.onNodeSelect(node);
+    }
   }
 
-  onoutpurtreeData(node) {
-    this.outpurtreeData.emit(node);
+  onNodeSelect(node: TreeNode) {
+    this.nodeSelect.emit(node);
   }
 }

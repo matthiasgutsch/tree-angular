@@ -1,1 +1,81 @@
-<app-tree [treeData]="nodes" (outpurtreeData)="onNodeSelect($event)"></app-tree>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="tree-wrapper">
+        <app-tree
+          [treeData]="nodes"
+          (nodeSelect)="onNodeSelect($event)"
+        ></app-tree>
+      </div>
+    </div>
+    <div class="col-sm-9">
+      <div class="documents-wrapper">
+        {{ selectedNode.firstName }}
+
+        <div *ngIf="selectedNode && selectedNode.documents.length > 0">
+          <p-table
+            #dt1
+            [value]="selectedNode.documents"
+            [loading]="loading"
+            dataKey="id"
+          >
+            <ng-template pTemplate="caption">
+              <div class="p-d-flex">
+                <span class="p-input-icon-left p-ml-auto">
+                  <i class="pi pi-search"></i>
+                  <input
+                    pInputText
+                    type="text"
+                    (input)="dt1.filterGlobal($event.target.value, 'contains')"
+                  />
+                </span>
+              </div>
+            </ng-template>
+
+            <ng-template pTemplate="header">
+              <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-d>
+              <tr>
+                <td>
+                  <a class="btn btn-download">
+                    <i class="fa fa-download"></i>
+                  </a>
+                </td>
+                <td>
+                  {{ d.name }}
+
+                  <p class="small tags truncate">
+                    <i class="fa fa-tag"></i>&nbsp;<strong>Tags:</strong
+                    ><span class="pills-wrapper"
+                      ><span class="pills-item ng-star-inserted">
+                        {{ d.name }}
+                      </span></span
+                    >
+                  </p>
+                </td>
+                <td>{{ d.data }}</td>
+
+                <td>
+                  <button class="btn btn-success btn-sm" type="button">
+                    <i aria-hidden="true" class="fa fa-pencil"></i>
+                  </button>
+
+                  <button class="btn btn-sm btn-danger" type="button">
+                    <i aria-hidden="true" class="fa fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </div>
+        <ul></ul>
+      </div>
+    </div>
+  </div>
+</div>
