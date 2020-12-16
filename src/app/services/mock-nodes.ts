@@ -23,10 +23,10 @@ export const NODES: TreeNode[] = [
             showChildren: false,
             documents: [
               {
-                name: 'document 1',
+                name: 'document 1.jpg',
               },
               {
-                name: 'document 2',
+                name: 'document 2.jpg',
               },
             ],
             children: [],

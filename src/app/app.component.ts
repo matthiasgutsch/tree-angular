@@ -10,4 +10,8 @@ export class AppComponent {
   title = 'tree-flower';
 
   nodes = NODES;
+
+  onNodeSelect(node) {
+    console.log();
+  }
 }

@@ -1,26 +1,12 @@
 <ul *ngIf="treeData">
   <li *ngFor="let node of treeData">
-    <span *ngIf="node.children != 0"><b>+</b></span>
-    <span (click)="toggleChild(node)"> {{ node.name }} </span>
+    <span *ngIf="node.children != 0" (click)="toggleChild(node)"><b>+</b></span>
+    <span (click)="onoutpurtreeData(node)"> {{ node.name }} </span>
     <app-tree *ngIf="node.showChildren" [treeData]="node.children"></app-tree>
-
-    <app-tree
-      *ngIf="node.showChildren || node.documents != 0"
-      [treeData]="node.documents"
-    ></app-tree>
   </li>
 </ul>
-
-<ul *ngIf="treeData">
-  <li *ngFor="let node of treeData">
-    <span *ngIf="node.children != 0"><b>+</b></span>
-    <span (click)="toggleChild(node)"> {{ node.name }} </span>
-    <app-tree *ngIf="node.showChildren" [treeData]="node.children"></app-tree>
-
-    <app-tree
-      *ngIf="node.showChildren || node.documents != 0"
-      [treeData]="node.documents"
-    ></app-tree>
-  </li>
-</ul>
-x
+<!-- <app-tree
+  *ngIf="node.showChildren || node.documents != 0"
+  [treeData]="node.documents"
+></app-tree>
+-->
