@@ -5,6 +5,7 @@ export const NODES: TreeNode[] = [
     name: 'Africa',
     showChildren: false,
     firstName: 'Africa',
+
     documents: [
       {
         name: 'document 1',

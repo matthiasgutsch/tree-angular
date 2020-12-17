@@ -10,8 +10,8 @@
     </div>
     <div class="col-sm-9">
       <div class="documents-wrapper">
-        {{ selectedNode.firstName }}
-
+        {{ selectedNode?.firstName }}
+        <br />
         <div *ngIf="selectedNode && selectedNode.documents.length > 0">
           <p-table
             #dt1
