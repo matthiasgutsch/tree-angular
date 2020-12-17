@@ -31,29 +31,14 @@ export class AppComponent implements OnInit {
       for (const n of node) {
         if (absoluteName.startsWith(n.firstName)) {
           n.showChildren = true;
-          this.selectedNode = n;
+          this.selectedFolder = n;
           if (absoluteName !== n.firstName) {
             this.openTreeAtPath(absoluteName, n.children);
           } else {
-            this.loadNode(this.selectedNode);
+            this.onNodeSelect(n);
           }
         }
       }
-    }
-  }
-
-  loadNode(event: any) {
-    console.log('loadNode node:', event.node);
-    if (event.node) {
-      this.selectedNode = event.node;
-      this.selectedNode.showChildren = false;
-      this.absolutePathWithoutName = this.selectedNode.firstName.replace(
-        this.selectedNode.name,
-        ''
-      );
-      this.element.name = this.selectedNode.name;
-      this.element.children = this.selectedNode.children;
-      this.element.firstName = this.selectedNode.firstName;
     }
   }
 

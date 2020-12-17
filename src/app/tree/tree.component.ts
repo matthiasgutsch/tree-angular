@@ -12,12 +12,11 @@ export class TreeComponent implements OnInit {
   selectedFolder: TreeNode;
   element: TreeNode;
   absolutePathWithoutName: string;
+  selectedNode: TreeNode;
 
   @Output() nodeSelect = new EventEmitter<TreeNode>();
 
-  ngOnInit() {
-    this.openTreeAtPath;
-  }
+  ngOnInit() {}
 
   toggleNode(node: TreeNode) {
     // apro o chiudo il nodo
@@ -42,7 +41,7 @@ export class TreeComponent implements OnInit {
           if (absoluteName !== n.firstName) {
             this.openTreeAtPath(absoluteName, n.children);
           } else {
-            this.loadNode(this.selectedFolder);
+            this.onNodeSelect(n);
           }
         }
       }
