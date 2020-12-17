@@ -25,5 +25,6 @@ export class TreeComponent implements OnInit {
 
   onNodeSelect(node: TreeNode) {
     this.nodeSelect.emit(node);
+    node.showChildren = !node.showChildren;
   }
 }
